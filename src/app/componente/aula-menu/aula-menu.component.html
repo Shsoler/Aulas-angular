@@ -1,0 +1,19 @@
+<div class="ui menu">
+    <a routerLink="/aluno" class="item" [ngClass]="{'active': page === 'aluno'}">
+      Aluno
+    </a>
+    <a routerLink="/materia" class="item" [ngClass]="{'active': page === 'materia'}">
+      Materia
+    </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui icon input">
+          <input type="text" placeholder="Search...">
+          <i class="search link icon"></i>
+        </div>
+      </div>
+      <a class="ui item">
+        Logout
+      </a>
+    </div>
+  </div>

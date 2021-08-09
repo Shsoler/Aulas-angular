@@ -1,0 +1,30 @@
+<div>
+    <div class="ui form">
+        <h4 class="ui dividing header">Cadastrar Aluno</h4>
+        <div class="field">
+            <label>Nome</label>
+                <input #nomeAluno type="text">
+          </div>
+    <div class="field">
+        <label>Data de Nascimento</label>
+            <input  #dataAluno type="date">
+      </div>
+      <div class="field">
+        <label>Materia</label>
+        <select #materiaSelect class="ui dropdown">
+            <option *ngFor="let materia of materias" value="{{materia?.id}}">{{materia?.titulo}}</option>
+          </select>
+      </div>
+      
+      <div class="field">
+        <button (click)="alunoAdicionar(nomeAluno.value,dataAluno.value,materiaSelect.value)"class="ui icon animated button primary">
+                    
+            <div class="visible content">Adicionar</div>
+            <div class="hidden content">
+                <i class="plus icon"></i>
+            </div>
+        </button>
+    </div>
+      <div class="ui horizontal divider"></div>
+    </div>
+</div>

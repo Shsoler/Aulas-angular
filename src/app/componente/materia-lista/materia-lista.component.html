@@ -1,0 +1,49 @@
+<div>
+    <div class="ui form">
+        <h4 class="ui dividing header">Cadastrar Materia</h4>
+        <div class="field">
+            <label>Titulo</label>
+                <input #tituloMateria [(ngModel)]="titulo" type="text">
+          </div>
+      
+      <div class="field">
+        <button (click)="materiaAdicionar()"class="ui icon animated button primary">
+                    
+            <div class="visible content">Adicionar</div>
+            <div class="hidden content">
+                <i class="plus icon"></i>
+            </div>
+        </button>
+    </div>
+      <div class="ui horizontal divider"></div>
+    </div>
+</div>
+<table class="ui very basic collapsing celled table">
+    <thead>
+        <tr><th>Id</th>
+        <th>Titulo</th>
+      </tr></thead>
+      <tbody>
+        <tr *ngFor="let materia of materias">
+            <td>
+                
+                     {{materia.id}}
+                
+            </td>
+            <td>
+                <a routerLink="/materia/{{materia.id}}">
+                {{materia.titulo}}
+                </a>
+            </td>
+            <td>
+                <button (click)="remover(materia.id)"class="ui icon animated button negative">
+                   
+                    <div class="visible content">Remover</div>
+                    <div class="hidden content">
+                        <i class="x icon icon"></i>
+                    </div>
+                  </button>
+            </td>
+          </tr>
+      </tbody>
+</table>

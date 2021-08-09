@@ -1,0 +1,39 @@
+<app-aluno-adicionar (eventoDeCadastro)="adicionar($event)"></app-aluno-adicionar>
+<table class="ui very basic collapsing celled table">
+    
+    <thead>
+        <tr><th>Id</th>
+        <th>Nome</th>
+        <th>Nascimento</th>
+      </tr></thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos">
+            <td>
+                
+                     {{aluno.id}}
+                
+            </td>
+            <td>
+                <a routerLink="/aluno/{{aluno.id}}">
+                {{aluno.nome}}
+                </a>
+            </td>
+            <td>
+                {{aluno.data_nasc |date: 'dd/MM/yyyy'}}
+            </td>
+            <td>
+                <span *ngIf="aluno.materia_id">{{aluno.materia_id?.titulo}}</span>
+                <span *ngIf="!aluno.materia_id">Sem aula</span>
+            </td>
+            <td>
+                <button (click)="remover(aluno.id)"class="ui icon animated button negative">
+                   
+                    <div class="visible content">Remover</div>
+                    <div class="hidden content">
+                        <i class="x icon icon"></i>
+                    </div>
+                  </button>
+            </td>
+          </tr>
+      </tbody>
+</table>

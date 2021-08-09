@@ -1,0 +1,57 @@
+<div>
+    <div class="ui form">
+        <h4 class="ui dividing header">Cadastrar Materia</h4>
+        <div class="field">
+            <label>Id</label>
+                <input #tituloMateria [(ngModel)]="materia.id" type="text">
+            </div>
+        <div class="field">
+            <label>Titulo</label>
+                <input #tituloMateria [(ngModel)]="materia.titulo" type="text">
+          </div>
+      
+      <div class="field">
+        <button (click)="materiaAtualizar()"class="ui icon animated button primary">
+                    
+            <div class="visible content">Atualizar</div>
+            <div class="hidden content">
+                <i class="plus icon"></i>
+            </div>
+        </button>
+    </div>
+      <div class="ui horizontal divider"></div>
+    </div>
+</div>
+<table class="ui very basic collapsing celled table">
+    <thead>
+        <tr><th>Id</th>
+        <th>Nome</th>
+        <th>Nascimento</th>
+      </tr></thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos">
+            <td>
+                
+                     {{aluno.id}}
+                
+            </td>
+            <td>
+                <a routerLink="/aluno/{{aluno.id}}">
+                {{aluno.nome}}
+                </a>
+            </td>
+            <td>
+                {{aluno.data_nasc |date: 'dd/MM/yyyy'}}
+            </td>
+            <td>
+                <button (click)="remover(aluno.id)"class="ui icon animated button negative">
+                   
+                    <div class="visible content">Remover</div>
+                    <div class="hidden content">
+                        <i class="x icon icon"></i>
+                    </div>
+                  </button>
+            </td>
+          </tr>
+      </tbody>
+</table>

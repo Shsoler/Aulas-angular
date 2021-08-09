@@ -1,0 +1,32 @@
+<div>
+    <div class="ui form" *ngIf="aluno">
+        <h4 class="ui dividing header">Editar Aluno</h4>
+        <div class="field">
+            <label>Id</label>
+                {{aluno.id}}
+          </div>
+        <div class="field">
+            <label>Nome</label>
+                <input [(ngModel)]="aluno.nome" type="text">
+          </div>
+    <div class="field">
+        <label>Data de Nascimento</label>
+            <input [(ngModel)]="aluno.data_nasc"  type="date">
+      </div>
+      <div class="field">
+        <select [(ngModel)]="aluno.materia_id.id" class="ui dropdown">
+            <option *ngFor="let materia of materias" value="{{materia.id}}">{{materia.titulo}}</option>
+        </select>
+     </div>
+      <div class="field">
+        <button (click)="editar()" class="ui icon animated button primary">
+                    
+            <div class="visible content">Atualizar</div>
+            <div class="hidden content">
+                <i class="plus icon"></i>
+            </div>
+        </button>
+    </div>
+      <div class="ui horizontal divider"></div>
+    </div>
+</div>
